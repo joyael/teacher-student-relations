@@ -19,14 +19,39 @@ if ($conn->connect_error) {
 
 <div class="connection-message-success">
 <span> 
-
-<?php
-
-echo 'Connected Successfully';
-
-?>
 </span>
-<br>
-<br>
 </div>
+
+
+
+        
+    
+
+
+    <div class="info-popup" id="infoPopup">
+        <span class="close-btn" id="closeBtn">&times;</span>
+        <p>
+                <?php
+                echo 'Connected Successfully';
+                ?>
+        </p>
+    </div>
+
+    <script>
+        // Get the popup and close button elements
+        const popup = document.getElementById('infoPopup');
+        const closeBtn = document.getElementById('closeBtn');
+
+        // Show the popup when the page loads
+        window.onload = function() {
+            popup.style.display = 'block';
+        };
+
+        // Close the popup when the close button is clicked
+        closeBtn.onclick = function() {
+            popup.style.display = 'none';
+        };
+    </script>
+
+
 

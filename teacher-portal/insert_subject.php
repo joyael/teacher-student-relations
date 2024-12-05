@@ -25,18 +25,44 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 }
 ?>
 
-<h3>Add Subject</h3>
-<form method="POST">
-    Name: <input type="text" name="name" required><br>
-    Teacher:
-    <select name="teacher_id" required>
-        <?php while ($row = $teacher_result->fetch_assoc()): ?>
-            <option value="<?= $row['id'] ?>"><?= $row['name'] ?></option>
-        <?php endwhile; ?>
-    </select><br>
-    <button type="submit">Add Subject</button>
-</form>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teacher Portal - Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Teacher Portal</h1>
+        <nav>
+            <ul>
+                <li><a href="dashboard.php">Dashboard</a></li>
+                <li><a href="logout.php">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="content-outer">
+    <div class="content-box">
+        <h3>Add Subject</h3>
+        <form method="POST">
+            Name: <input type="text" name="name" required><br><br>
+            Teacher: <br>
+            <select name="teacher_id" class="half-width" required>
+                <?php while ($row = $teacher_result->fetch_assoc()): ?>
+                    <option value="<?= $row['id'] ?>"> <?= $row['name'] ?> </option>
+                <?php endwhile; ?>
+            </select><br><br>
+            <button type="submit" class="form-submit">Add Subject</button>
+        </form>
+    </div>
+    </div>
 
 
-<br> <br>  <a href="dashboard.php">Back to DashBoard</a>
-<br> <br>  <a href="logout.php">Logout</a>
+        <footer>
+            <p>&copy; 2023 Teacher Portal. All rights reserved.</p>
+        </footer>
+</body>
+</html>

@@ -46,20 +46,24 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Subject Marks</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <?php
+    include 'header.php';
+    ?>
     <h1>View Marks by Subject</h1>
     <form method="POST" action="">
         <label for="subject_id">Select Subject:</label>
-        <select name="subject_id" id="subject_id" required>
+        <select name="subject_id" id="subject_id" class="half-width" required>
             <option value="">-- Select a Subject --</option>
             <?php while ($subject = $subjects_result->fetch_assoc()): ?>
                 <option value="<?= $subject['id'] ?>" <?= ($selected_subject_id == $subject['id']) ? 'selected' : '' ?>>
                     <?= $subject['name'] ?>
                 </option>
             <?php endwhile; ?>
-        </select>
-        <button type="submit">View Marks</button>
+        </select><br>
+        <button type="submit" class="form-submit">View Marks</button><br>
     </form>
 
     <?php if ($selected_subject_id && $marks_data): ?>
@@ -84,9 +88,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <p>No marks found for this subject.</p>
     <?php endif; ?>
     <a>
+
+
+    <?php
+    include "footer.php"; 
+    ?>
+
+
 </body>
 </html>
-
-
-<br> <br>  <a href="dashboard.php">Back to DashBoard</a>
-<br> <br>  <a href="logout.php">Logout</a>

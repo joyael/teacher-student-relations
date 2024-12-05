@@ -47,20 +47,24 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Student Marks</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <?php
+    include 'header.php';
+    ?>
     <h1>View Student Marks</h1>
     <form method="POST" action="">
         <label for="student_id">Select Student:</label>
-        <select name="student_id" id="student_id" required>
+        <select name="student_id" id="student_id" class="half-width" required>
             <option value="">-- Select a Student --</option>
             <?php while ($student = $students_result->fetch_assoc()): ?>
                 <option value="<?= $student['id'] ?>" <?= ($selected_student_id == $student['id']) ? 'selected' : '' ?>>
                     <?= $student['name'] ?>
                 </option>
             <?php endwhile; ?>
-        </select>
-        <button type="submit">View Marks</button>
+        </select><br>
+        <button type="submit" class="form-submit">View Marks</button>
     </form>
 
     <?php if ($selected_student_id && $marks_data): ?>
@@ -84,9 +88,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <?php elseif ($selected_student_id): ?>
         <p>No marks found for this student.</p>
     <?php endif; ?>
+
+    <?php
+    include "footer.php"; 
+    ?>
+
+
 </body>
 </html>
-
-
-<br> <br>  <a href="dashboard.php">Back to DashBoard</a>
-<br> <br>  <a href="logout.php">Logout</a>

@@ -1,0 +1,203 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+main {
+    padding: 20px;
+}
+
+form {
+    margin-top: 20px;
+}
+
+form label {
+    display: block;
+    margin: 10px 0 5px;
+}
+
+form input {
+    padding: 8px;
+    width: 100%;
+    max-width: 300px;
+}
+
+form button {
+    margin-top: 10px;
+    padding: 10px 15px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: #45a049;
+}
+
+footer {
+    background-color: #f1f1f1;
+    text-align: center;
+    padding: 10px 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+
+.element-page-active{
+    border: 1px solid white;
+}
+
+.content-outer{
+    display: flex;
+    justify-content: center;
+}
+
+.content-box{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.form-submit{
+    width:100%;
+}
+
+.center-text{
+    text-align: center;
+}
+
+
+
+/* ------------------teacher dashboard ----------------------- */
+
+
+
+.teacher-dashboard-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 15px;
+}
+
+.teacher-dashboard-table th, .teacher-dashboard-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+.teacher-dashboard-table th {
+    background-color: #f2f2f2;
+}
+
+.teacher-dashboard-table tr:hover {
+    background-color: #e0e0e0; /* Change this color to your preference */
+}
+
+.teacher-dashboard-table a {
+    text-decoration: none;
+    color: #007bff; /* Bootstrap primary color */
+}
+
+.teacher-dashboard-table a:hover {
+    text-decoration: underline;
+}
+
+
+
+
+/* ------------------------------ Add subject ------------------------------ */
+
+
+.content-box select{ 
+    margin-top: 10px;
+    padding: 10px 15px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.half-width{
+    width: 50%;
+}
+
+
+
+/* ------------------------------ Students Marks ------------------------------ */
+
+.content-box table{
+    margin-bottom: 20px;
+    border-color: #45a049;
+}
+.content-box th{
+    border-color: #45a049;
+}
+
+.content-box tr{
+    border-color: #45a049;
+}
+
+.content-box td{
+    border-color: #45a049;
+}
+
+
+
+
+/* ------------------------------ Pop up Info ------------------------------ */
+
+
+.info-popup {
+    position: fixed;
+    top: 20px; /* Distance from the top */
+    right: 20px; /* Distance from the right */
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    display: none; /* Hidden by default */
+    z-index: 1000; /* Ensure it appears above other content */
+
+}
+
+.info-popup p{
+    font-size: 12px;
+}
+
+.close-btn {
+    cursor: pointer;
+    color: #aaa;
+    float: right;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.close-btn:hover {
+    color: black;
+}

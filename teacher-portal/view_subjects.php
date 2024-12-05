@@ -24,8 +24,12 @@ $subjects_result = $conn->query($subjects_query);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>View Subjects</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <?php
+    include 'header.php';
+    ?>
     <h1>All Subjects</h1>
     <table border="1" cellpadding="5" cellspacing="0">
         <thead>
@@ -51,10 +55,12 @@ $subjects_result = $conn->query($subjects_query);
             <?php endif; ?>
         </tbody>
     </table>
+    
+    <?php
+    include "footer.php"; 
+    ?>
 </body>
 </html>
 
 
 
-<br> <br>  <a href="dashboard.php">Back to DashBoard</a>
-<br> <br>  <a href="logout.php">Logout</a>

@@ -26,23 +26,59 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 }
 ?>
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teacher Portal - Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    
+    <header>
+        <h1>Teacher Portal</h1>
+        <nav>
+            <ul>
+                <li><a href="dashboard.php">Dashboard</a></li>
+                <li><a href="logout.php">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="content-outer">
+    <div class="content-box">
+
+
 <h3>Add Marks</h3>
 <form method="POST">
-    Student:
-    <select name="student_id" required>
+    Student:<br>
+    <select name="student_id" class="half-width" required>
         <?php while ($row = $student_result->fetch_assoc()): ?>
             <option value="<?= $row['id'] ?>"><?= $row['name'] ?></option>
         <?php endwhile; ?>
-    </select><br>
-    Subject:
-    <select name="subject_id" required>
+    </select><br><br>
+    Subject:<br>
+    <select name="subject_id" class="half-width" required>
         <?php while ($row = $subject_result->fetch_assoc()): ?>
             <option value="<?= $row['id'] ?>"><?= $row['name'] ?></option>
         <?php endwhile; ?>
-    </select><br>
-    Marks: <input type="number" name="marks" required><br>
-    <button type="submit">Add Marks</button>
+    </select><br><br>
+    Marks: <input type="number" name="marks" required><br><br>
+    <button type="submit" class="form-submit">Add Marks</button>
 </form>
 
-<br> <br>  <a href="dashboard.php">Back to DashBoard</a>
-<br> <br>  <a href="logout.php">Logout</a>
+
+    </div>
+    </div>
+
+    
+    <footer>
+        <p>&copy; 2023 Teacher Portal. All rights reserved.</p>
+    </footer>
+</body>
+</html>
+
