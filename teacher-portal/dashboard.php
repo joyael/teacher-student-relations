@@ -76,6 +76,9 @@ if (!isset($_SESSION['teacher_id'])) {
             <tr>
                 <td><a href="student_marks.php" class="center-text">View Marks (Student Wise)</a></td>
             </tr>
+            <tr>
+                <td><a href="class_report.php" class="center-text">Class Report</a></td>
+            </tr>
         </tbody>
         </table>
         </div>
