@@ -201,3 +201,31 @@ footer {
 .close-btn:hover {
     color: black;
 }
+
+
+
+/* --------------------------------- New Dashboard CSS------------------------ */
+
+
+.sections-outer{
+    display:grid;
+    grid-template-columns: repeat(3, 1fr);
+    background-image: url("light-color-background.jpg");
+    background-repeat: no-repeat; /* Ensures the image does not repeat */
+    background-size: cover;
+}
+
+.section{
+    margin:30px;
+}
+
+.teacher-dashboard-table td{
+    font-size: 12px;
+}
+.teacher-dashboard-table td a{
+    color: green;
+}
+.teacher-dashboard-table{
+    border-radius: 10px;
+    border: 3px solid green;
+}

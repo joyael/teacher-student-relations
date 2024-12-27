@@ -18,6 +18,7 @@ $subject_data = $subjects->fetch_all(MYSQLI_ASSOC); // Cache subject data for mu
 
 // Initialize variables
 $selected_class = '';
+
 $students_result = null;
 
 // Handle form submission
@@ -26,8 +27,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     // Validate and filter input
     if (!empty($selected_class)) {
-        $stmt = $conn->prepare("SELECT id, name FROM students WHERE class = ?");
-        $stmt->bind_param("s", $selected_class);
+            $stmt = $conn->prepare("SELECT id, name FROM students WHERE class = ?");
+            $stmt->bind_param("s", $selected_class);
         $stmt->execute();
         $students_result = $stmt->get_result();
     }
@@ -58,6 +59,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         </select><br>
         <button type="submit" class="form-submit">View Report</button>
     </form>
+
+
 
     <?php if ($selected_class && $students_result): ?>
         <h2>Marks for Class: <?= htmlspecialchars($selected_class) ?></h2>
